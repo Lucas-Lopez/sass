@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* estilos generales */
+
+body{
+    background-color: #4DA85E;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    #grid {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "propaganda propaganda"
+        "busqueda productos"
+        "footer footer";
+        grid-template-columns: 1fr 8fr;
+    }
+    .gridHeader {
+        grid-area: header;
+        border: solid black 1px;
+        display: grid;
+        grid-template-areas: 
+        "logo buscar perfil";
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F03255;
+        width: 100%;
+        .imgLogo{
+            height: 100px;
+            animation-name: caida;
+           animation-duration: 2s;
+           }
+    }
+    nav{
+        position: sticky;
+        top: 1px;
+        z-index: 3;
+        .menu{
+            background-color: rgb(252, 0, 0);
+            font-size: 30px;
+            border: solid black 3px;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+}
+
+
+
+
+@keyframes caida {
+    0%{
+        transform: translateY(-500px) ;
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}     
+
+
+
+
+
+
+
+/* GRID */
+
+
+#gridContacto {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "nav nav "
+    "redes form "
+    "footer footer";
+    grid-template-columns: 1fr 1fr;
+}
+#gridCarrito{
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "compra"
+        "footer";
+    }
+#gridPerfil{
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "usuario"
+        "footer";
+        .gridUsuario{
+            grid-area: usuario;
+            height: 20em;
+        }
+    }
+
+    
+
+    
+    
+    
+    
+    /* RESPONSIVE */
+    
+    /* Smartphone */
+    
+    @media (max-width: 481px)  {
+        #grid {
+            display: grid;
+        grid-template-areas: 
+        " header"
+        " nav"
+        " propaganda"
+        " productos"
+        " footer";
+        grid-template-columns: 1fr 8fr;
+    }
+    section#productos{
+        justify-content: center;
+    }
+
+    nav{
+        position: relative;
+    }
+    .menu{
+        font-size: 15px;
+    }
+    section#busqueda{
+        display: none;
+    
+    }
+    #carouselExampleIndicators{
+        display: none;
+    }
+    .gridHeader {
+        grid-area: header;
+        border: solid black 1px;
+        display: grid;
+        grid-template-areas: 
+        "logo buscar perfil";
+        justify-content: space-between;
+        background-color: #ff0644;
+        width: 100%;
+    }
+    .imgLogo{
+        height: 3em;
+    }
+    body{
+        background-color: blue;
+    }
+}
+
+/* TABLET */
+@media (min-width: 482px) and (max-width: 768px) {
+    body{
+        background-color: purple;
+    }
+    nav{
+        position: static;
+    }
+    .menu{
+        background-color: brown;
+        font-size: 20px;
+    }
+    section#productos{
+        justify-content: center;
+    }
+    section#busqueda{
+        display: none;
+        
+    }
+    #carouselExampleIndicators{
+        display: none;
+    }
+}
+
+/* TABLET APAISADA */
+
+@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+    body{
+        background-color: brown;
+    }
+}
+
+
+/* Pseudoclases */
+
+a:hover{
+    color: blue;
+}
+a:active{
+    color: #4DA85E;
+}
+
+/*
+.fotoPerfil{
+    height: 20%;
+    transition: all 0.6s;
+}
+.imgProducto{
+    height: 7em;
+}
+.fotoPerfil:hover{
+    height: 40%;
+    background-color: green;
+    position: relative ;
+}
+
+.bordered{
+    display: inline-block;
+    padding: 0.5%;
+    border: solid black 1px;
+}
+.gridCompra{
+    grid-area: compra;
+    padding-left: 5%;
+}
+
+ .gridRedes{
+    grid-area: redes;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    padding: 50px;
+    .imgRed{
+        height: 2em;
+        width: 2em;
+    }
+ }
+.gridForm{
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    padding: 50px;
+    }
+nav{
+    grid-area: nav;
+}
+
+section#productos{
+    grid-area: productos;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+}
+
+section#busqueda{
+    grid-area: busqueda;
+
+}
+.propaganda{
+    grid-area: propaganda;
+}
+
+footer{
+    display: grid;
+    grid-area: footer;
+    background-color: #FFC2CD ;
+    grid-template-areas: 
+    "redes mapa links"
+    ;
+    grid-template-columns: 2fr 4fr 2fr;
+    justify-content: space-between;
+    align-items: center;
+    .redes{
+        grid-area: redes;
+    }
+    .mapa{
+    grid-area: mapa;
+    }
+    .links{
+        grid-area: links;
+    }
+
+}
+*/

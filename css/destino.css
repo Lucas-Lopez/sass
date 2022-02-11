@@ -1,0 +1,241 @@
+/* comentario de css puro */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* estilos generales */
+body {
+  background-color: #4DA85E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+  body nav {
+    position: sticky;
+    top: 1px;
+    z-index: 3; }
+    body nav .menu {
+      background-color: #fc0000;
+      font-size: 30px;
+      border: solid black 3px;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+  body section#productos {
+    grid-area: productos;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around; }
+    body section#productos .wrap__producto {
+      border: solid 2px black;
+      display: flex;
+      margin: 10px;
+      padding: 10px;
+      width: 10em;
+      height: 10em;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s; }
+      body section#productos .wrap__producto:hover {
+        width: 15em;
+        height: 15em;
+        background-color: green;
+        position: relative; }
+  body footer {
+    display: grid;
+    grid-area: footer;
+    background-color: #FFC2CD;
+    grid-template-areas: "redes mapa links";
+    grid-template-columns: 2fr 4fr 2fr;
+    justify-content: space-between;
+    align-items: center; }
+
+.imgLogo {
+  height: 100px;
+  animation-name: caida;
+  animation-duration: 2s; }
+
+@keyframes caida {
+  0% {
+    transform: translateY(-500px); }
+  100% {
+    transform: translateY(0px); } }
+
+.propaganda {
+  width: 100%;
+  height: 300px;
+  transition: all 0.5s; }
+  .propaganda:hover {
+    width: 100%;
+    height: 25em;
+    background-color: green;
+    position: relative; }
+
+.imgRed {
+  height: 2em;
+  width: 2em; }
+
+/* GRID */
+#grid {
+  display: grid;
+  grid-template-areas: "header header"
+ "nav nav"
+ "propaganda propaganda"
+ "busqueda productos"
+ "footer footer";
+  grid-template-columns: 1fr 8fr; }
+
+#gridContacto {
+  display: grid;
+  grid-template-areas: "header header"
+ "nav nav "
+ "redes form "
+ "footer footer";
+  grid-template-columns: 1fr 1fr; }
+
+#gridCarrito {
+  display: grid;
+  grid-template-areas: "header"
+ "nav"
+ "compra"
+ "footer"; }
+
+#gridPerfil {
+  display: grid;
+  grid-template-areas: "header"
+ "nav"
+ "usuario"
+ "footer"; }
+
+.gridUsuario {
+  grid-area: usuario;
+  height: 20em; }
+
+.fotoPerfil {
+  height: 20%;
+  transition: all 0.6s; }
+
+.imgProducto {
+  height: 7em; }
+
+.fotoPerfil:hover {
+  height: 40%;
+  background-color: green;
+  position: relative; }
+
+.bordered {
+  display: inline-block;
+  padding: 0.5%;
+  border: solid black 1px; }
+
+.gridCompra {
+  grid-area: compra;
+  padding-left: 5%; }
+
+.gridHeader {
+  grid-area: header;
+  border: solid black 1px;
+  display: grid;
+  grid-template-areas: "logo buscar perfil";
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F03255;
+  width: 100%; }
+
+.gridRedes {
+  grid-area: redes;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+  justify-items: center;
+  padding: 50px; }
+
+.gridForm {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  padding: 50px; }
+
+nav {
+  grid-area: nav; }
+
+section#busqueda {
+  grid-area: busqueda; }
+
+section#propaganda {
+  grid-area: propaganda; }
+
+.redes {
+  grid-area: redes; }
+
+.mapa {
+  grid-area: mapa; }
+
+.links {
+  grid-area: links; }
+
+/* RESPONSIVE */
+/* Smartphone */
+@media (max-width: 481px) {
+  #grid {
+    display: grid;
+    grid-template-areas: " header"
+ " nav"
+ " propaganda"
+ " productos"
+ " footer";
+    grid-template-columns: 1fr 8fr; }
+  section#productos {
+    justify-content: center; }
+  nav {
+    position: relative; }
+  .menu {
+    font-size: 15px; }
+  section#busqueda {
+    display: none; }
+  #carouselExampleIndicators {
+    display: none; }
+  .gridHeader {
+    grid-area: header;
+    border: solid black 1px;
+    display: grid;
+    grid-template-areas: "logo buscar perfil";
+    justify-content: space-between;
+    background-color: #ff0644;
+    width: 100%; }
+  .imgLogo {
+    height: 3em; }
+  body {
+    background-color: blue; } }
+
+/* TABLET */
+@media (min-width: 482px) and (max-width: 768px) {
+  body {
+    background-color: purple; }
+  nav {
+    position: static; }
+  .menu {
+    background-color: brown;
+    font-size: 20px; }
+  section#productos {
+    justify-content: center; }
+  section#busqueda {
+    display: none; }
+  #carouselExampleIndicators {
+    display: none; } }
+
+/* TABLET APAISADA */
+@media (min-width: 768px) and (max-width: 992px) and (orientation: landscape) {
+  body {
+    background-color: brown; } }
+
+/* Pseudoclases */
+a:hover {
+  color: blue; }
+
+a:active {
+  color: #4DA85E; }
